@@ -1,20 +1,38 @@
 <div class='row>'>
-  <div class='heading'>
-    <h3>Welcome to CrowdFlower, you amazing beast!</h3>
-    <p>Get familiar with us by creating your first Crowdflower job</p>
-    <br>
-    <p><b>What would you like to do?</b></p>
+  <div class="medium-12 columns">
+    <div class='heading'>
+      <h3>Welcome to CrowdFlower, you amazing beast!</h3>
+      <p>Get familiar with us by creating your first Crowdflower job</p>
+      <br>
+      <p><b>What would you like to do?</b></p>
+    </div>
+
+    <%= content_tag "div", id: "templates", data: {templates: @templates} do %>
+      <ul id="grid" class="small-block-grid-4"></ul>  
+    <% end %>
+
+    <%= link_to "See more &#x25BE;".html_safe, "#", remote: true, class: 'right more' %>
+    <hr>
   </div>
 
-  <%= content_tag "div", id: "templates", data: {templates: @templates} do %>
-    <ul id="grid" class="small-block-grid-4">
-    </ul>  
-    <div>
-      <%= link_to "See more", "#", remote: true, class: 'see-more' %>
-    </div>  
+</div>
 
-  <% end %>
+<div class='row'>
+  <div class="medium-3 columns">
+    <h5>Need help getting started?</h5>
+    <ul>
+      <li><%= link_to 'Read help docs', "#" %></li>
+      <li><%= link_to 'View example case studies', "#" %></li>
+      <li><%= link_to 'Watch training videos', "#" %></li>
+    </ul> 
+  </div>
+  <div class="medium-9 columns">
+    <h5>Don't see what you're looking for?</h5>
+    <p>Tell us what your data needs - we'll get back to you with a recommedation</p>
 
-  <%= render partial: 'messages/form' %>
+    <%= render partial: "messages/form" %>
+    
+  </div>  
+</div>
 
-</div>  
+

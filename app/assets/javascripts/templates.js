@@ -18,16 +18,16 @@ $(document).ready(function(){
 
   });
 
-  $('.see-more').click(function(){
+  $('.more').click(function(){
     $(this).hide();
     $('.extra-template').css('display','inline-block');
   });
 
   $("#message_text").on('change keyup paste', function() {
-    $('.send-button').prop('disabled', false);
+    $('.send').prop('disabled', false);
 
     if (($(this).val().length == 0) || ($(this).val().length > 140)) {
-      $('.send-button').prop('disabled', true);
+      $('.send').prop('disabled', true);
     }
 
     if ($(this).val().length > 140) {
@@ -35,6 +35,12 @@ $(document).ready(function(){
     }
     else {
       $('#error').hide();
+    }
+
+    if ($('.send').prop('disabled') == true) {
+      $( ".send" ).addClass('disabled'); 
+    } else {
+      $( ".send" ).removeClass('disabled'); 
     }
 
   });
@@ -46,6 +52,13 @@ $(document).ready(function(){
   });
 
   $('.extra-template').hide();
+
+  $('input,textarea').focus(function(){
+     $(this).data('placeholder',$(this).attr('placeholder'))
+            .attr('placeholder','');
+  }).blur(function(){
+     $(this).attr('placeholder',$(this).data('placeholder'));
+  });  
 
 });
 
