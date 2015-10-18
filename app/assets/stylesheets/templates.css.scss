@@ -1,3 +1,14 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius !important;
+     -moz-border-radius: $radius !important;
+      -ms-border-radius: $radius !important;
+          border-radius: $radius !important;
+}
+
+.button {
+  @include border-radius(3px);
+}  
+
 .heading {
   h3 {
     font-weight: bold;
@@ -18,19 +29,10 @@ ul {
   border: 2px solid #ebebeb;
   background-color: #f0f4f5;
   &:hover {
-  /* IE 8 */
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-
-  /* IE 5-7 */
   filter: alpha(opacity=50);
-
-  /* Netscape */
   -moz-opacity: 0.5;
-
-  /* Safari 1.x */
   -khtml-opacity: 0.5;
-
-  /* Good browsers */
   opacity: 0.5;
   }
   img {
@@ -38,19 +40,14 @@ ul {
     margin: 10px;
   }
 
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+  @include border-radius(5px);
 
   .name {
     background-color: white;
     padding: 10px;
     font-size: .8em;
     font-weight: bold;
-
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;    
+    @include border-radius(5px); 
   }
 }
 
@@ -64,6 +61,18 @@ textarea {
   resize: none;
   padding: 15px !important;  
   font-size: 1em !important;
+}
+
+.filepicker-button {
+  margin: 0 !important;
+  font-size: .8em !important;
+  color: white !important;
+  background-color: #858585 !important;
+}
+
+.drop-files {
+  padding: 6px 10px !important;
+  margin-left: 10px !important;
 }
 
 ::-webkit-input-placeholder { color: #999 !important; }

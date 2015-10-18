@@ -1,6 +1,15 @@
 <%= form_for @message, remote: true do |f| %>
   <div class="panel">
     <%= f.text_area :text, rows: 4, placeholder: 'Describe your data goals in a short summary' %>
+    <%= f.filepicker_field :file, { 
+      button_class: 'filepicker-button button tiny secondary', 
+      button_text: 'Upload File',
+      multiple: true,
+      services: 'COMPUTER',
+      dragdrop: true,
+      drag_text: 'or drop files here',
+      drag_class: 'drop-files'
+      } %>
   </div>  
   <%= f.submit 'Send', disabled: true, class: 'right send button disabled' %>
 <% end %>  
