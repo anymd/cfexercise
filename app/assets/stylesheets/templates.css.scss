@@ -38,9 +38,9 @@ ul {
     margin: 10px;
   }
 
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-radius: 6px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 
   .name {
     background-color: white;
@@ -48,8 +48,25 @@ ul {
     font-size: .8em;
     font-weight: bold;
 
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    border-radius: 6px;    
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;    
   }
 }
+
+.more {
+  color: #999;
+  weight: bold;
+  margin-bottom: 15px;
+}
+
+textarea {
+  resize: none;
+  padding: 15px !important;  
+  font-size: 1em !important;
+}
+
+::-webkit-input-placeholder { color: #999 !important; }
+:-moz-placeholder { color: #999 !important; }
+::-moz-placeholder { color: #999 !important;  }
+:-ms-input-placeholder { color: #999 !important; }
