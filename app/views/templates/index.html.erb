@@ -1,1 +1,20 @@
-<%= @templates.inspect %>
+<div class='row>'>
+  <div class='heading'>
+    <h3>Welcome to CrowdFlower, you amazing beast!</h3>
+    <p>Get familiar with us by creating your first Crowdflower job</p>
+    <br>
+    <p><b>What would you like to do?</b></p>
+  </div>
+
+  <%= content_tag "div", id: "templates", data: {templates: @templates} do %>
+    <ul id="grid" class="small-block-grid-4">
+    </ul>  
+    <div>
+      <%= link_to "See more", "#", remote: true, class: 'see-more' %>
+    </div>  
+
+  <% end %>
+
+  <%= render partial: 'messages/form' %>
+
+</div>  

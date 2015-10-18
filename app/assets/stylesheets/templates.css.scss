@@ -1,3 +1,55 @@
-// Place all the styles related to the templates controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.heading {
+  h3 {
+    font-weight: bold;
+  }
+}
+
+li {
+  min-width: 200px;
+}
+
+ul {
+  min-width: 900px;
+}
+
+.template {
+  min-width: 200px;
+  cursor: pointer;
+  border: 2px solid #ebebeb;
+  background-color: #f0f4f5;
+  &:hover {
+  /* IE 8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+
+  /* IE 5-7 */
+  filter: alpha(opacity=50);
+
+  /* Netscape */
+  -moz-opacity: 0.5;
+
+  /* Safari 1.x */
+  -khtml-opacity: 0.5;
+
+  /* Good browsers */
+  opacity: 0.5;
+  }
+  img {
+    width: 90%;
+    margin: 10px;
+  }
+
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+
+  .name {
+    background-color: white;
+    padding: 10px;
+    font-size: .8em;
+    font-weight: bold;
+
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;    
+  }
+}
