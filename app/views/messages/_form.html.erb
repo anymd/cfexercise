@@ -1,0 +1,15 @@
+<%= form_for @message, remote: true do |f| %>
+  <%= f.label :text %>:
+  <%= f.text_area :text %><br />
+
+  <%= f.label :file %>:
+  <%= f.text_field :file %><br />
+
+  <%= f.submit 'Send', disabled: true, class: 'button' %>
+  <div id='error'>Your message must be 140 characters or less</div>
+<% end %>
+
+<div id="success_message">
+  Thank you for your sharing your needs with us, we will get back to you shortly.<br>
+  <%= link_to "Send another message", "#", remote: true, class: "send-another-message" %>
+</div>  

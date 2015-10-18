@@ -1,0 +1,8 @@
+$('#new_message').hide();
+$('#success_message').show();
+
+<% if @message.save %>
+  alert('success');
+<% else %>
+  alert('nope');
+<% end %>
