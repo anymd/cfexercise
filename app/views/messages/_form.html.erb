@@ -1,7 +1,7 @@
 <%= form_for @message, remote: true do |f| %>
   <div class="panel">
     <div id="message_error" class="error"></div>
-    <%= f.text_area :text, rows: 4, placeholder: 'Describe your data goals in a short summary' %>
+    <%= f.text_area :text, rows: 4, placeholder: t('templates.message.placeholder') %>
     <%= f.filepicker_field :file, { 
       button_class: 'filepicker-button button tiny secondary', 
       button_text: 'Upload File',
