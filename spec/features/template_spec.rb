@@ -6,18 +6,26 @@ RSpec.describe "Templates", type: :feature do
     visit "/"
   end  
 
-  it "loads the page" do
+  it "loads the templates page" do
     expect(page).to have_selector(".heading", :text => "Welcome")
   end
  
-  it "has the see more link" do
-  	expect(page).to have_css(".more")
-  	expect(page).to have_css(".template")
+  it "shows 8 templates at first", js: true do
+    expect(page).to have_selector('.template', count: 8)
   end
 
-  it 'submits a message' do
+  it "has the see more link", js: true do
+  	expect(page).to have_css(".more")
+  end
+
+  it "shows 2 more templates after clicking see more", js: true do
+  	click_on 'more'
+    expect(page).to have_selector('.template', count: 10)
+  end
+
+  it 'submits a message', js: true do
   	fill_in('message_text', :with => 'my data needs love')
-    click_on 'Send', disabled: true
+    click_on 'Send'
   	expect(Message.all.first.text).to eq('my data needs love')
   end
 
