@@ -1,5 +1,6 @@
 <%= form_for @message, remote: true do |f| %>
   <div class="panel">
+    <div id="message_error" class="error"></div>
     <%= f.text_area :text, rows: 4, placeholder: 'Describe your data goals in a short summary' %>
     <%= f.filepicker_field :file, { 
       button_class: 'filepicker-button button tiny secondary', 
@@ -11,14 +12,7 @@
       drag_class: 'drop-files'
       } %>
   </div>  
+  <%= f.check_box :error %> force ajax error
   <%= f.submit 'Send', disabled: true, class: 'right send button disabled' %>
-<% end %>  
 
-
-<% if false %>
-  <div id='error'>Your message must be 140 characters or less</div>
-  <div id="success_message">
-    Thank you for your sharing your needs with us, we will get back to you shortly.<br>
-    <%= link_to "Send another message", "#", remote: true, class: "send-another-message" %>
-  </div>  
 <% end %>  

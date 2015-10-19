@@ -9,6 +9,7 @@ class MessagesController < ApplicationController
 
     @message = Message.new(message_params)
     respond_to do |format|  
+      format.html
       format.js
     end  
 
@@ -17,7 +18,7 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:text, :file)
+    params.require(:message).permit(:text, :file, :error)
   end
 
 end

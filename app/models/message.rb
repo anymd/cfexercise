@@ -1,4 +1,6 @@
 class Message < ActiveRecord::Base
 
-  validates_presence_of :file
+  attr_accessor :error
+  validates :error, acceptance: { accept: '0' }
+
 end
