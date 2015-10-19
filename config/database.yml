@@ -5,14 +5,12 @@ default: &default
 
 development:
   <<: *default
-  database: myapp_development
+  database: cflower_development
 
- test:
+test:
   <<: *default
-  database: myapp_test
+  database: cflower_test
 
 production:
   <<: *default
-  database: myapp_production
-  username: myapp
-  password: <%= ENV['CFLOWER_DATABASE_PASSWORD'] %>
+  database: cflower_production
