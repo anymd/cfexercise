@@ -25,16 +25,17 @@ $(document).ready(function(){
 
   $("#message_text").on('change keyup paste', function() {
     $('.send').prop('disabled', false);
+    $('#message-response').hide();
 
     if (($(this).val().length == 0) || ($(this).val().length > 140)) {
       $('.send').prop('disabled', true);
     }
 
     if ($(this).val().length > 140) {
-      $('#error').show();
+      $('#message_error').text('Your message must be 140 characters or fewer');
     }
     else {
-      $('#error').hide();
+      $('#message_error').text('');
     }
 
     if ($('.send').prop('disabled') == true) {

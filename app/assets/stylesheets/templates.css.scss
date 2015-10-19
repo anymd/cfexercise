@@ -51,7 +51,7 @@ ul {
   }
 }
 
-.more {
+.more, .account {
   color: #999;
   weight: bold;
   margin-bottom: 15px;
@@ -79,3 +79,7 @@ textarea {
 :-moz-placeholder { color: #999 !important; }
 ::-moz-placeholder { color: #999 !important;  }
 :-ms-input-placeholder { color: #999 !important; }
+
+#send_message {
+  height: 200px;
+}

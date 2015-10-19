@@ -1,8 +1,6 @@
-$('#new_message').hide();
-$('#success_message').show();
-
 <% if @message.save %>
-  alert('success');
+  $('#send_message').html('<div class="alert-box success"><b>Message sent!</b><br>Thank you for your request, we will get back to you shortly.');
 <% else %>
-  alert('nope');
+  $('#message_error').text('There was a problem submitting your message, please try again.');
 <% end %>
+
