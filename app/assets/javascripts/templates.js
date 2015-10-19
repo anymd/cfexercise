@@ -11,7 +11,7 @@ $(document).ready(function(){
 
     $('#grid').append(
       '<li class=' + extra + '><div class="template">' +
-        '<img src="assets/' + val.url + '">' +
+        '<img src="images/' + val.image + '">' +
         '<div class="name">' + val.name + '</div></div>' +
       '</li>'
     );
