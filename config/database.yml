@@ -1,16 +1,4 @@
-default: &default
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
-
 development:
-  <<: *default
-  database: cflower_development
-
-test:
-  <<: *default
-  database: cflower_test
-
-production:
-  <<: *default
-  database: cflower_production
+  adapter: postgresql
+  host: localhost
+  database: cflower-development
